@@ -2,6 +2,7 @@ package poi.core;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -76,5 +77,17 @@ public class PoiManager {
         return points.remove(id) != null;
     }
 
-    // TODO: Add other methods as needed.
+    //TODO: Add other methods as needed.
+    //Not quite sure where I went wrong here. Could not quite get the nearMe method to work for the last part of the assignment.
+    public synchronized List nearMe(double latitude, double longitude, double radius, String search){
+        GeoLocation loc = new GeoLocation(latitude, longitude);
+        List<PointOfInterest> nearbyPoi = new ArrayList<>();
+
+        for(PointOfInterest poi : points.values()){
+            if(poi.distanceFrom(loc) <= radius && poi.match(search)) {
+                nearbyPoi.add(poi);
+            }
+        }
+        return nearbyPoi;
+    }
 }

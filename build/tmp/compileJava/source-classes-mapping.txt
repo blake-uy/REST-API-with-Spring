@@ -1,0 +1,12 @@
+poi/core/GeoLocation.java
+ poi.core.GeoLocation
+poi/Main.java
+ poi.Main
+poi/core/PoiManager.java
+ poi.core.PoiManager
+poi/core/PointOfInterest.java
+ poi.core.PointOfInterest
+poi/controller/PoiController.java
+ poi.controller.PoiController
+poi/config/BeanConfig.java
+ poi.config.BeanConfig
